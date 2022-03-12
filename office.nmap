@@ -1,0 +1,469 @@
+# Nmap 7.92 scan initiated Thu Mar 10 11:48:28 2022 as: nmap -p- -A -oA office 10.20.4.0/24
+Nmap scan report for 10.20.4.1
+Host is up (0.013s latency).
+Not shown: 65534 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.4p1 Debian 5 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 61:47:ad:a3:bb:b8:db:03:35:22:a6:86:63:3b:03:26 (RSA)
+|   256 c1:aa:8c:1d:b3:9e:62:a9:fd:7e:47:ef:e7:b8:14:59 (ECDSA)
+|_  256 bf:d1:08:4a:fe:ca:c4:fe:9b:f7:c1:fc:06:ed:1a:c1 (ED25519)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 10.20.4.2
+Host is up (0.011s latency).
+Not shown: 65533 closed tcp ports (conn-refused)
+PORT   STATE SERVICE    VERSION
+53/tcp open  domain     dnsmasq 2.76
+| dns-nsid: 
+|_  bind.version: dnsmasq-2.76
+80/tcp open  http-proxy (bad gateway)
+| fingerprint-strings: 
+|   FourOhFourRequest, GetRequest, HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     content-length: 52
+|     content-type: text/plain; charset=UTF-8
+|     date: Thu, 10 Mar 2022 08:48:53 GMT
+|     connection: close
+|     Found
+|     resource could not be found.
+|   Help, NessusTPv10, SSLSessionReq: 
+|     HTTP/1.1 400 Bad request
+|     content-length: 90
+|     cache-control: no-cache
+|     content-type: text/html
+|     connection: close
+|     <html><body><h1>400 Bad request</h1>
+|     Your browser sent an invalid request.
+|     </body></html>
+|   RTSPRequest: 
+|     HTTP/1.1 502 Bad Gateway
+|     content-length: 107
+|     cache-control: no-cache
+|     content-type: text/html
+|     connection: close
+|     <html><body><h1>502 Bad Gateway</h1>
+|     server returned an invalid or incomplete response.
+|_    </body></html>
+|_http-title: Site doesn't have a title (text/plain; charset=UTF-8).
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.92%I=7%D=3/10%Time=6229BB75%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\ncontent-length:\x2052\r\
+SF:ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ndate:\x20Thu,\x2010\x
+SF:20Mar\x202022\x2008:48:53\x20GMT\r\nconnection:\x20close\r\n\r\n404\x20
+SF:Not\x20Found\n\nThe\x20resource\x20could\x20not\x20be\x20found\.\n\n\x2
+SF:0\x20\x20")%r(HTTPOptions,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\nconte
+SF:nt-length:\x2052\r\ncontent-type:\x20text/plain;\x20charset=UTF-8\r\nda
+SF:te:\x20Thu,\x2010\x20Mar\x202022\x2008:48:53\x20GMT\r\nconnection:\x20c
+SF:lose\r\n\r\n404\x20Not\x20Found\n\nThe\x20resource\x20could\x20not\x20b
+SF:e\x20found\.\n\n\x20\x20\x20")%r(RTSPRequest,E1,"HTTP/1\.1\x20502\x20Ba
+SF:d\x20Gateway\r\ncontent-length:\x20107\r\ncache-control:\x20no-cache\r\
+SF:ncontent-type:\x20text/html\r\nconnection:\x20close\r\n\r\n<html><body>
+SF:<h1>502\x20Bad\x20Gateway</h1>\nThe\x20server\x20returned\x20an\x20inva
+SF:lid\x20or\x20incomplete\x20response\.\n</body></html>\n")%r(FourOhFourR
+SF:equest,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\ncontent-length:\x2052\r\
+SF:ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ndate:\x20Thu,\x2010\x
+SF:20Mar\x202022\x2008:48:53\x20GMT\r\nconnection:\x20close\r\n\r\n404\x20
+SF:Not\x20Found\n\nThe\x20resource\x20could\x20not\x20be\x20found\.\n\n\x2
+SF:0\x20\x20")%r(Help,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\ncontent-le
+SF:ngth:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20text/html
+SF:\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20request</
+SF:h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body></ht
+SF:ml>\n")%r(SSLSessionReq,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nconte
+SF:nt-length:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20text
+SF:/html\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20requ
+SF:est</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body
+SF:></html>\n")%r(NessusTPv10,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nco
+SF:ntent-length:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20t
+SF:ext/html\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20r
+SF:equest</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</b
+SF:ody></html>\n");
+
+Nmap scan report for 10.20.4.3
+Host is up (0.010s latency).
+Not shown: 65533 closed tcp ports (conn-refused)
+PORT   STATE SERVICE    VERSION
+53/tcp open  domain     dnsmasq 2.76
+| dns-nsid: 
+|_  bind.version: dnsmasq-2.76
+80/tcp open  http-proxy (bad gateway)
+| fingerprint-strings: 
+|   FourOhFourRequest, GetRequest, HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     content-length: 52
+|     content-type: text/plain; charset=UTF-8
+|     date: Thu, 10 Mar 2022 08:48:53 GMT
+|     connection: close
+|     Found
+|     resource could not be found.
+|   Help, NessusTPv10, SSLSessionReq: 
+|     HTTP/1.1 400 Bad request
+|     content-length: 90
+|     cache-control: no-cache
+|     content-type: text/html
+|     connection: close
+|     <html><body><h1>400 Bad request</h1>
+|     Your browser sent an invalid request.
+|     </body></html>
+|   RTSPRequest: 
+|     HTTP/1.1 502 Bad Gateway
+|     content-length: 107
+|     cache-control: no-cache
+|     content-type: text/html
+|     connection: close
+|     <html><body><h1>502 Bad Gateway</h1>
+|     server returned an invalid or incomplete response.
+|_    </body></html>
+|_http-title: Site doesn't have a title (text/plain; charset=UTF-8).
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.92%I=7%D=3/10%Time=6229BB75%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\ncontent-length:\x2052\r\
+SF:ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ndate:\x20Thu,\x2010\x
+SF:20Mar\x202022\x2008:48:53\x20GMT\r\nconnection:\x20close\r\n\r\n404\x20
+SF:Not\x20Found\n\nThe\x20resource\x20could\x20not\x20be\x20found\.\n\n\x2
+SF:0\x20\x20")%r(HTTPOptions,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\nconte
+SF:nt-length:\x2052\r\ncontent-type:\x20text/plain;\x20charset=UTF-8\r\nda
+SF:te:\x20Thu,\x2010\x20Mar\x202022\x2008:48:53\x20GMT\r\nconnection:\x20c
+SF:lose\r\n\r\n404\x20Not\x20Found\n\nThe\x20resource\x20could\x20not\x20b
+SF:e\x20found\.\n\n\x20\x20\x20")%r(RTSPRequest,E1,"HTTP/1\.1\x20502\x20Ba
+SF:d\x20Gateway\r\ncontent-length:\x20107\r\ncache-control:\x20no-cache\r\
+SF:ncontent-type:\x20text/html\r\nconnection:\x20close\r\n\r\n<html><body>
+SF:<h1>502\x20Bad\x20Gateway</h1>\nThe\x20server\x20returned\x20an\x20inva
+SF:lid\x20or\x20incomplete\x20response\.\n</body></html>\n")%r(FourOhFourR
+SF:equest,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\ncontent-length:\x2052\r\
+SF:ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ndate:\x20Thu,\x2010\x
+SF:20Mar\x202022\x2008:48:53\x20GMT\r\nconnection:\x20close\r\n\r\n404\x20
+SF:Not\x20Found\n\nThe\x20resource\x20could\x20not\x20be\x20found\.\n\n\x2
+SF:0\x20\x20")%r(Help,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\ncontent-le
+SF:ngth:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20text/html
+SF:\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20request</
+SF:h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body></ht
+SF:ml>\n")%r(SSLSessionReq,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nconte
+SF:nt-length:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20text
+SF:/html\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20requ
+SF:est</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body
+SF:></html>\n")%r(NessusTPv10,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nco
+SF:ntent-length:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20t
+SF:ext/html\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20r
+SF:equest</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</b
+SF:ody></html>\n");
+
+Nmap scan report for 10.20.4.4
+Host is up (0.013s latency).
+Not shown: 65533 closed tcp ports (conn-refused)
+PORT   STATE SERVICE    VERSION
+53/tcp open  domain     dnsmasq 2.76
+| dns-nsid: 
+|_  bind.version: dnsmasq-2.76
+80/tcp open  http-proxy (bad gateway)
+| fingerprint-strings: 
+|   FourOhFourRequest, GetRequest, HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     content-length: 52
+|     content-type: text/plain; charset=UTF-8
+|     date: Thu, 10 Mar 2022 08:48:53 GMT
+|     connection: close
+|     Found
+|     resource could not be found.
+|   Help, NessusTPv10, SSLSessionReq: 
+|     HTTP/1.1 400 Bad request
+|     content-length: 90
+|     cache-control: no-cache
+|     content-type: text/html
+|     connection: close
+|     <html><body><h1>400 Bad request</h1>
+|     Your browser sent an invalid request.
+|     </body></html>
+|   RTSPRequest: 
+|     HTTP/1.1 502 Bad Gateway
+|     content-length: 107
+|     cache-control: no-cache
+|     content-type: text/html
+|     connection: close
+|     <html><body><h1>502 Bad Gateway</h1>
+|     server returned an invalid or incomplete response.
+|_    </body></html>
+|_http-title: Site doesn't have a title (text/plain; charset=UTF-8).
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.92%I=7%D=3/10%Time=6229BB75%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\ncontent-length:\x2052\r\
+SF:ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ndate:\x20Thu,\x2010\x
+SF:20Mar\x202022\x2008:48:53\x20GMT\r\nconnection:\x20close\r\n\r\n404\x20
+SF:Not\x20Found\n\nThe\x20resource\x20could\x20not\x20be\x20found\.\n\n\x2
+SF:0\x20\x20")%r(HTTPOptions,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\nconte
+SF:nt-length:\x2052\r\ncontent-type:\x20text/plain;\x20charset=UTF-8\r\nda
+SF:te:\x20Thu,\x2010\x20Mar\x202022\x2008:48:53\x20GMT\r\nconnection:\x20c
+SF:lose\r\n\r\n404\x20Not\x20Found\n\nThe\x20resource\x20could\x20not\x20b
+SF:e\x20found\.\n\n\x20\x20\x20")%r(RTSPRequest,E1,"HTTP/1\.1\x20502\x20Ba
+SF:d\x20Gateway\r\ncontent-length:\x20107\r\ncache-control:\x20no-cache\r\
+SF:ncontent-type:\x20text/html\r\nconnection:\x20close\r\n\r\n<html><body>
+SF:<h1>502\x20Bad\x20Gateway</h1>\nThe\x20server\x20returned\x20an\x20inva
+SF:lid\x20or\x20incomplete\x20response\.\n</body></html>\n")%r(FourOhFourR
+SF:equest,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\ncontent-length:\x2052\r\
+SF:ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ndate:\x20Thu,\x2010\x
+SF:20Mar\x202022\x2008:48:53\x20GMT\r\nconnection:\x20close\r\n\r\n404\x20
+SF:Not\x20Found\n\nThe\x20resource\x20could\x20not\x20be\x20found\.\n\n\x2
+SF:0\x20\x20")%r(Help,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\ncontent-le
+SF:ngth:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20text/html
+SF:\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20request</
+SF:h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body></ht
+SF:ml>\n")%r(SSLSessionReq,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nconte
+SF:nt-length:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20text
+SF:/html\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20requ
+SF:est</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body
+SF:></html>\n")%r(NessusTPv10,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nco
+SF:ntent-length:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20t
+SF:ext/html\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20r
+SF:equest</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</b
+SF:ody></html>\n");
+
+Nmap scan report for 10.20.4.6
+Host is up (0.020s latency).
+Not shown: 65519 closed tcp ports (conn-refused)
+PORT      STATE SERVICE       VERSION
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds?
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| ssl-cert: Subject: commonName=custarm.company.local
+| Not valid before: 2022-02-23T16:51:38
+|_Not valid after:  2022-08-25T16:51:38
+| rdp-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: CUSTARM
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: custarm.company.local
+|   DNS_Tree_Name: company.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2022-03-10T08:53:10+00:00
+|_ssl-date: 2022-03-10T08:53:37+00:00; 0s from scanner time.
+5040/tcp  open  unknown
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+5986/tcp  open  ssl/http      Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+| ssl-cert: Subject: commonName=Cloudbase-Init WinRM
+| Not valid before: 2022-02-23T11:42:54
+|_Not valid after:  2032-02-22T11:42:54
+|_ssl-date: 2022-03-10T08:53:37+00:00; 0s from scanner time.
+|_http-server-header: Microsoft-HTTPAPI/2.0
+| tls-alpn: 
+|_  http/1.1
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49670/tcp open  msrpc         Microsoft Windows RPC
+49671/tcp open  msrpc         Microsoft Windows RPC
+49705/tcp open  msrpc         Microsoft Windows RPC
+49709/tcp open  msrpc         Microsoft Windows RPC
+49712/tcp open  msrpc         Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2022-03-10T08:53:14
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+
+Nmap scan report for 10.20.4.8
+Host is up (0.015s latency).
+Not shown: 65521 closed tcp ports (conn-refused)
+PORT      STATE SERVICE            VERSION
+22/tcp    open  ssh                OpenSSH for_Windows_8.6 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 23:18:fc:38:62:8f:3d:aa:48:f3:f0:48:8d:17:c5:55 (RSA)
+|   256 1b:ba:74:cf:1b:cd:36:cf:0c:09:c1:f3:e4:d3:d0:7f (ECDSA)
+|_  256 49:0f:d6:2a:5b:fd:ec:04:ed:17:5a:8f:0b:a4:1d:77 (ED25519)
+135/tcp   open  msrpc              Microsoft Windows RPC
+139/tcp   open  netbios-ssn        Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds       Windows 7 Professional 7601 Service Pack 1 microsoft-ds (workgroup: company)
+3389/tcp  open  ssl/ms-wbt-server?
+| rdp-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: BUCHGARM
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: BUCHGARM.company.local
+|   DNS_Tree_Name: company.local
+|   Product_Version: 6.1.7601
+|_  System_Time: 2022-03-10T08:53:10+00:00
+| ssl-cert: Subject: commonName=BUCHGARM.company.local
+| Not valid before: 2022-02-23T16:51:40
+|_Not valid after:  2022-08-25T16:51:40
+|_ssl-date: 2022-03-10T08:53:36+00:00; 0s from scanner time.
+5985/tcp  open  http               Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+5986/tcp  open  ssl/http           Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+| ssl-cert: Subject: commonName=Cloudbase-Init WinRM
+| Not valid before: 2022-02-23T10:46:12
+|_Not valid after:  2032-02-22T10:46:12
+| sslv2: 
+|   SSLv2 supported
+|   ciphers: 
+|     SSL2_RC4_128_WITH_MD5
+|_    SSL2_DES_192_EDE3_CBC_WITH_MD5
+|_ssl-date: 2022-03-10T08:53:37+00:00; 0s from scanner time.
+|_http-title: Not Found
+47001/tcp open  http               Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+49152/tcp open  msrpc              Microsoft Windows RPC
+49153/tcp open  msrpc              Microsoft Windows RPC
+49154/tcp open  msrpc              Microsoft Windows RPC
+49174/tcp open  msrpc              Microsoft Windows RPC
+49178/tcp open  msrpc              Microsoft Windows RPC
+49189/tcp open  msrpc              Microsoft Windows RPC
+Service Info: Host: BUCHGARM; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb-os-discovery: 
+|   OS: Windows 7 Professional 7601 Service Pack 1 (Windows 7 Professional 6.1)
+|   OS CPE: cpe:/o:microsoft:windows_7::sp1:professional
+|   Computer name: BUCHGARM
+|   NetBIOS computer name: BUCHGARM\x00
+|   Domain name: company.local
+|   Forest name: company.local
+|   FQDN: BUCHGARM.company.local
+|_  System time: 2022-03-10T11:53:18+03:00
+|_clock-skew: mean: -29m58s, deviation: 1h13m25s, median: 0s
+|_nbstat: NetBIOS name: BUCHGARM, NetBIOS user: <unknown>, NetBIOS MAC: fa:16:3e:90:3b:2c (unknown)
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-time: 
+|   date: 2022-03-10T08:53:18
+|_  start_date: 2022-02-24T16:57:25
+| smb2-security-mode: 
+|   2.1: 
+|_    Message signing enabled but not required
+
+Nmap scan report for 10.20.4.10
+Host is up (0.0089s latency).
+Not shown: 65519 closed tcp ports (conn-refused)
+PORT      STATE SERVICE       VERSION
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds?
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: SYSADMINARM
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: sysadminarm.company.local
+|   DNS_Tree_Name: company.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2022-03-10T08:53:17+00:00
+|_ssl-date: 2022-03-10T08:53:37+00:00; 0s from scanner time.
+| ssl-cert: Subject: commonName=sysadminarm.company.local
+| Not valid before: 2022-02-23T16:51:39
+|_Not valid after:  2022-08-25T16:51:39
+5040/tcp  open  unknown
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+5986/tcp  open  ssl/http      Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+| tls-alpn: 
+|_  http/1.1
+|_ssl-date: 2022-03-10T08:53:37+00:00; 0s from scanner time.
+|_http-server-header: Microsoft-HTTPAPI/2.0
+| ssl-cert: Subject: commonName=Cloudbase-Init WinRM
+| Not valid before: 2022-02-23T11:47:09
+|_Not valid after:  2032-02-22T11:47:09
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49670/tcp open  msrpc         Microsoft Windows RPC
+49671/tcp open  msrpc         Microsoft Windows RPC
+49701/tcp open  msrpc         Microsoft Windows RPC
+49705/tcp open  msrpc         Microsoft Windows RPC
+49708/tcp open  msrpc         Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2022-03-10T08:53:23
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+
+Nmap scan report for 10.20.4.13
+Host is up (0.0032s latency).
+Not shown: 65519 closed tcp ports (conn-refused)
+PORT      STATE SERVICE       VERSION
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds?
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+|_ssl-date: 2022-03-10T08:53:36+00:00; 0s from scanner time.
+| ssl-cert: Subject: commonName=enggeneral.company.local
+| Not valid before: 2022-02-23T16:51:39
+|_Not valid after:  2022-08-25T16:51:39
+| rdp-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: ENGGENERAL
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: enggeneral.company.local
+|   DNS_Tree_Name: company.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2022-03-10T08:53:16+00:00
+5040/tcp  open  unknown
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+5986/tcp  open  ssl/http      Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_ssl-date: 2022-03-10T08:53:37+00:00; 0s from scanner time.
+| tls-alpn: 
+|_  http/1.1
+|_http-server-header: Microsoft-HTTPAPI/2.0
+| ssl-cert: Subject: commonName=Cloudbase-Init WinRM
+| Not valid before: 2022-02-23T11:48:07
+|_Not valid after:  2032-02-22T11:48:07
+|_http-title: Not Found
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49670/tcp open  msrpc         Microsoft Windows RPC
+49671/tcp open  msrpc         Microsoft Windows RPC
+49701/tcp open  msrpc         Microsoft Windows RPC
+49703/tcp open  msrpc         Microsoft Windows RPC
+49707/tcp open  msrpc         Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2022-03-10T08:53:26
+|_  start_date: N/A
+
+Post-scan script results:
+| clock-skew: 
+|   -29m58s: 
+|     10.20.4.8
+|     10.20.4.6
+|     10.20.4.13
+|_    10.20.4.10
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Mar 10 11:53:38 2022 -- 256 IP addresses (8 hosts up) scanned in 309.92 seconds

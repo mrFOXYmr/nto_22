@@ -1,0 +1,803 @@
+# Nmap 7.92 scan initiated Thu Mar 10 11:41:59 2022 as: nmap -p- -A -oA servers 10.20.3.0/24
+Nmap scan report for 10.20.3.1
+Host is up (0.0033s latency).
+Not shown: 65534 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.4p1 Debian 5 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 61:47:ad:a3:bb:b8:db:03:35:22:a6:86:63:3b:03:26 (RSA)
+|   256 c1:aa:8c:1d:b3:9e:62:a9:fd:7e:47:ef:e7:b8:14:59 (ECDSA)
+|_  256 bf:d1:08:4a:fe:ca:c4:fe:9b:f7:c1:fc:06:ed:1a:c1 (ED25519)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 10.20.3.2
+Host is up (0.0089s latency).
+Not shown: 65533 closed tcp ports (conn-refused)
+PORT   STATE SERVICE    VERSION
+53/tcp open  domain     dnsmasq 2.76
+| dns-nsid: 
+|_  bind.version: dnsmasq-2.76
+80/tcp open  http-proxy (bad gateway)
+| fingerprint-strings: 
+|   FourOhFourRequest, GetRequest, HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     content-length: 52
+|     content-type: text/plain; charset=UTF-8
+|     date: Thu, 10 Mar 2022 08:42:23 GMT
+|     connection: close
+|     Found
+|     resource could not be found.
+|   Help, NessusTPv10, SSLSessionReq: 
+|     HTTP/1.1 400 Bad request
+|     content-length: 90
+|     cache-control: no-cache
+|     content-type: text/html
+|     connection: close
+|     <html><body><h1>400 Bad request</h1>
+|     Your browser sent an invalid request.
+|     </body></html>
+|   RTSPRequest: 
+|     HTTP/1.1 502 Bad Gateway
+|     content-length: 107
+|     cache-control: no-cache
+|     content-type: text/html
+|     connection: close
+|     <html><body><h1>502 Bad Gateway</h1>
+|     server returned an invalid or incomplete response.
+|_    </body></html>
+|_http-title: Site doesn't have a title (text/plain; charset=UTF-8).
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.92%I=7%D=3/10%Time=6229B9EF%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\ncontent-length:\x2052\r\
+SF:ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ndate:\x20Thu,\x2010\x
+SF:20Mar\x202022\x2008:42:23\x20GMT\r\nconnection:\x20close\r\n\r\n404\x20
+SF:Not\x20Found\n\nThe\x20resource\x20could\x20not\x20be\x20found\.\n\n\x2
+SF:0\x20\x20")%r(HTTPOptions,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\nconte
+SF:nt-length:\x2052\r\ncontent-type:\x20text/plain;\x20charset=UTF-8\r\nda
+SF:te:\x20Thu,\x2010\x20Mar\x202022\x2008:42:23\x20GMT\r\nconnection:\x20c
+SF:lose\r\n\r\n404\x20Not\x20Found\n\nThe\x20resource\x20could\x20not\x20b
+SF:e\x20found\.\n\n\x20\x20\x20")%r(RTSPRequest,E1,"HTTP/1\.1\x20502\x20Ba
+SF:d\x20Gateway\r\ncontent-length:\x20107\r\ncache-control:\x20no-cache\r\
+SF:ncontent-type:\x20text/html\r\nconnection:\x20close\r\n\r\n<html><body>
+SF:<h1>502\x20Bad\x20Gateway</h1>\nThe\x20server\x20returned\x20an\x20inva
+SF:lid\x20or\x20incomplete\x20response\.\n</body></html>\n")%r(FourOhFourR
+SF:equest,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\ncontent-length:\x2052\r\
+SF:ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ndate:\x20Thu,\x2010\x
+SF:20Mar\x202022\x2008:42:23\x20GMT\r\nconnection:\x20close\r\n\r\n404\x20
+SF:Not\x20Found\n\nThe\x20resource\x20could\x20not\x20be\x20found\.\n\n\x2
+SF:0\x20\x20")%r(Help,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\ncontent-le
+SF:ngth:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20text/html
+SF:\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20request</
+SF:h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body></ht
+SF:ml>\n")%r(SSLSessionReq,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nconte
+SF:nt-length:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20text
+SF:/html\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20requ
+SF:est</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body
+SF:></html>\n")%r(NessusTPv10,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nco
+SF:ntent-length:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20t
+SF:ext/html\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20r
+SF:equest</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</b
+SF:ody></html>\n");
+
+Nmap scan report for 10.20.3.3
+Host is up (0.011s latency).
+Not shown: 65533 closed tcp ports (conn-refused)
+PORT   STATE SERVICE    VERSION
+53/tcp open  domain     dnsmasq 2.76
+| dns-nsid: 
+|_  bind.version: dnsmasq-2.76
+80/tcp open  http-proxy (bad gateway)
+| fingerprint-strings: 
+|   FourOhFourRequest, GetRequest, HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     content-length: 52
+|     content-type: text/plain; charset=UTF-8
+|     date: Thu, 10 Mar 2022 08:42:23 GMT
+|     connection: close
+|     Found
+|     resource could not be found.
+|   Help, NessusTPv10, SSLSessionReq: 
+|     HTTP/1.1 400 Bad request
+|     content-length: 90
+|     cache-control: no-cache
+|     content-type: text/html
+|     connection: close
+|     <html><body><h1>400 Bad request</h1>
+|     Your browser sent an invalid request.
+|     </body></html>
+|   RTSPRequest: 
+|     HTTP/1.1 502 Bad Gateway
+|     content-length: 107
+|     cache-control: no-cache
+|     content-type: text/html
+|     connection: close
+|     <html><body><h1>502 Bad Gateway</h1>
+|     server returned an invalid or incomplete response.
+|_    </body></html>
+|_http-title: Site doesn't have a title (text/plain; charset=UTF-8).
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.92%I=7%D=3/10%Time=6229B9EF%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\ncontent-length:\x2052\r\
+SF:ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ndate:\x20Thu,\x2010\x
+SF:20Mar\x202022\x2008:42:23\x20GMT\r\nconnection:\x20close\r\n\r\n404\x20
+SF:Not\x20Found\n\nThe\x20resource\x20could\x20not\x20be\x20found\.\n\n\x2
+SF:0\x20\x20")%r(HTTPOptions,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\nconte
+SF:nt-length:\x2052\r\ncontent-type:\x20text/plain;\x20charset=UTF-8\r\nda
+SF:te:\x20Thu,\x2010\x20Mar\x202022\x2008:42:23\x20GMT\r\nconnection:\x20c
+SF:lose\r\n\r\n404\x20Not\x20Found\n\nThe\x20resource\x20could\x20not\x20b
+SF:e\x20found\.\n\n\x20\x20\x20")%r(RTSPRequest,E1,"HTTP/1\.1\x20502\x20Ba
+SF:d\x20Gateway\r\ncontent-length:\x20107\r\ncache-control:\x20no-cache\r\
+SF:ncontent-type:\x20text/html\r\nconnection:\x20close\r\n\r\n<html><body>
+SF:<h1>502\x20Bad\x20Gateway</h1>\nThe\x20server\x20returned\x20an\x20inva
+SF:lid\x20or\x20incomplete\x20response\.\n</body></html>\n")%r(FourOhFourR
+SF:equest,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\ncontent-length:\x2052\r\
+SF:ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ndate:\x20Thu,\x2010\x
+SF:20Mar\x202022\x2008:42:23\x20GMT\r\nconnection:\x20close\r\n\r\n404\x20
+SF:Not\x20Found\n\nThe\x20resource\x20could\x20not\x20be\x20found\.\n\n\x2
+SF:0\x20\x20")%r(Help,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\ncontent-le
+SF:ngth:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20text/html
+SF:\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20request</
+SF:h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body></ht
+SF:ml>\n")%r(SSLSessionReq,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nconte
+SF:nt-length:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20text
+SF:/html\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20requ
+SF:est</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body
+SF:></html>\n")%r(NessusTPv10,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nco
+SF:ntent-length:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20t
+SF:ext/html\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20r
+SF:equest</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</b
+SF:ody></html>\n");
+
+Nmap scan report for 10.20.3.4
+Host is up (0.0080s latency).
+Not shown: 65533 closed tcp ports (conn-refused)
+PORT   STATE SERVICE    VERSION
+53/tcp open  domain     dnsmasq 2.76
+| dns-nsid: 
+|_  bind.version: dnsmasq-2.76
+80/tcp open  http-proxy (bad gateway)
+| fingerprint-strings: 
+|   FourOhFourRequest, GetRequest, HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     content-length: 52
+|     content-type: text/plain; charset=UTF-8
+|     date: Thu, 10 Mar 2022 08:42:23 GMT
+|     connection: close
+|     Found
+|     resource could not be found.
+|   Help, NessusTPv10, SSLSessionReq: 
+|     HTTP/1.1 400 Bad request
+|     content-length: 90
+|     cache-control: no-cache
+|     content-type: text/html
+|     connection: close
+|     <html><body><h1>400 Bad request</h1>
+|     Your browser sent an invalid request.
+|     </body></html>
+|   RTSPRequest: 
+|     HTTP/1.1 502 Bad Gateway
+|     content-length: 107
+|     cache-control: no-cache
+|     content-type: text/html
+|     connection: close
+|     <html><body><h1>502 Bad Gateway</h1>
+|     server returned an invalid or incomplete response.
+|_    </body></html>
+|_http-title: Site doesn't have a title (text/plain; charset=UTF-8).
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.92%I=7%D=3/10%Time=6229B9EF%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\ncontent-length:\x2052\r\
+SF:ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ndate:\x20Thu,\x2010\x
+SF:20Mar\x202022\x2008:42:23\x20GMT\r\nconnection:\x20close\r\n\r\n404\x20
+SF:Not\x20Found\n\nThe\x20resource\x20could\x20not\x20be\x20found\.\n\n\x2
+SF:0\x20\x20")%r(HTTPOptions,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\nconte
+SF:nt-length:\x2052\r\ncontent-type:\x20text/plain;\x20charset=UTF-8\r\nda
+SF:te:\x20Thu,\x2010\x20Mar\x202022\x2008:42:23\x20GMT\r\nconnection:\x20c
+SF:lose\r\n\r\n404\x20Not\x20Found\n\nThe\x20resource\x20could\x20not\x20b
+SF:e\x20found\.\n\n\x20\x20\x20")%r(RTSPRequest,E1,"HTTP/1\.1\x20502\x20Ba
+SF:d\x20Gateway\r\ncontent-length:\x20107\r\ncache-control:\x20no-cache\r\
+SF:ncontent-type:\x20text/html\r\nconnection:\x20close\r\n\r\n<html><body>
+SF:<h1>502\x20Bad\x20Gateway</h1>\nThe\x20server\x20returned\x20an\x20inva
+SF:lid\x20or\x20incomplete\x20response\.\n</body></html>\n")%r(FourOhFourR
+SF:equest,C3,"HTTP/1\.1\x20404\x20Not\x20Found\r\ncontent-length:\x2052\r\
+SF:ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ndate:\x20Thu,\x2010\x
+SF:20Mar\x202022\x2008:42:23\x20GMT\r\nconnection:\x20close\r\n\r\n404\x20
+SF:Not\x20Found\n\nThe\x20resource\x20could\x20not\x20be\x20found\.\n\n\x2
+SF:0\x20\x20")%r(Help,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\ncontent-le
+SF:ngth:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20text/html
+SF:\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20request</
+SF:h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body></ht
+SF:ml>\n")%r(SSLSessionReq,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nconte
+SF:nt-length:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20text
+SF:/html\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20requ
+SF:est</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body
+SF:></html>\n")%r(NessusTPv10,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nco
+SF:ntent-length:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20t
+SF:ext/html\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20r
+SF:equest</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</b
+SF:ody></html>\n");
+
+Nmap scan report for 10.20.3.10
+Host is up (0.0038s latency).
+Not shown: 65506 closed tcp ports (conn-refused)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2022-03-10 08:43:02Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: company.local0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: company.local0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| ssl-cert: Subject: commonName=ns2.company.local
+| Not valid before: 2022-02-23T15:50:45
+|_Not valid after:  2022-08-25T15:50:45
+|_ssl-date: 2022-03-10T08:47:56+00:00; 0s from scanner time.
+| rdp-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: NS2
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: ns2.company.local
+|   DNS_Tree_Name: company.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2022-03-10T08:47:34+00:00
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+5986/tcp  open  ssl/http      Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_ssl-date: 2022-03-10T08:47:56+00:00; 0s from scanner time.
+| ssl-cert: Subject: commonName=Cloudbase-Init WinRM
+| Not valid before: 2022-02-23T14:38:34
+|_Not valid after:  2032-02-22T14:38:34
+| tls-alpn: 
+|_  http/1.1
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+9389/tcp  open  mc-nmf        .NET Message Framing
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49670/tcp open  msrpc         Microsoft Windows RPC
+49671/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49672/tcp open  msrpc         Microsoft Windows RPC
+49674/tcp open  msrpc         Microsoft Windows RPC
+49684/tcp open  msrpc         Microsoft Windows RPC
+49712/tcp open  msrpc         Microsoft Windows RPC
+59635/tcp open  msrpc         Microsoft Windows RPC
+62127/tcp open  msrpc         Microsoft Windows RPC
+Service Info: Host: NS2; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2022-03-10T08:47:31
+|_  start_date: N/A
+
+Nmap scan report for 10.20.3.20
+Host is up (0.0065s latency).
+Not shown: 65437 closed tcp ports (conn-refused)
+PORT      STATE SERVICE              VERSION
+25/tcp    open  smtp                 Microsoft Exchange smtpd
+| smtp-commands: mx1.company.local Hello [10.20.5.12], SIZE 37748736, PIPELINING, DSN, ENHANCEDSTATUSCODES, STARTTLS, X-ANONYMOUSTLS, AUTH NTLM, X-EXPS GSSAPI NTLM, 8BITMIME, BINARYMIME, CHUNKING, SMTPUTF8, XRDST
+|_ This server supports the following commands: HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH BDAT
+| ssl-cert: Subject: commonName=mx1
+| Subject Alternative Name: DNS:mx1, DNS:mx1.company.local
+| Not valid before: 2022-02-24T16:22:57
+|_Not valid after:  2027-02-24T16:22:57
+| smtp-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: MX1
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: mx1.company.local
+|   DNS_Tree_Name: company.local
+|_  Product_Version: 10.0.17763
+80/tcp    open  http                 Microsoft IIS httpd 10.0
+|_http-title: Site doesn't have a title.
+|_http-server-header: Microsoft-IIS/10.0
+81/tcp    open  http                 Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: 403 - Forbidden: Access is denied.
+110/tcp   open  pop3                 Microsoft Exchange 2007-2010 pop3d
+| ssl-cert: Subject: commonName=mx1
+| Subject Alternative Name: DNS:mx1, DNS:mx1.company.local
+| Not valid before: 2022-02-24T16:22:57
+|_Not valid after:  2027-02-24T16:22:57
+|_pop3-capabilities: TOP STLS UIDL
+135/tcp   open  msrpc                Microsoft Windows RPC
+139/tcp   open  netbios-ssn          Microsoft Windows netbios-ssn
+143/tcp   open  imap                 Microsoft Exchange 2007-2010 imapd
+| imap-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: MX1
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: mx1.company.local
+|   DNS_Tree_Name: company.local
+|_  Product_Version: 10.0.17763
+| ssl-cert: Subject: commonName=mx1
+| Subject Alternative Name: DNS:mx1, DNS:mx1.company.local
+| Not valid before: 2022-02-24T16:22:57
+|_Not valid after:  2027-02-24T16:22:57
+|_imap-capabilities: completed IMAP4 STARTTLS ID MOVE OK CHILDREN LOGINDISABLED UNSELECT UIDPLUS NAMESPACE LITERAL+A0001 IDLE IMAP4rev1 SASL-IR CAPABILITY
+443/tcp   open  ssl/http             Microsoft IIS httpd 10.0
+| http-title: Outlook
+|_Requested resource was https://10.20.3.20/owa/auth/logon.aspx?url=https%3a%2f%2f10.20.3.20%2fowa%2f&reason=0
+|_http-server-header: Microsoft-IIS/10.0
+| ssl-cert: Subject: commonName=mx1
+| Subject Alternative Name: DNS:mx1, DNS:mx1.company.local
+| Not valid before: 2022-02-24T16:22:57
+|_Not valid after:  2027-02-24T16:22:57
+444/tcp   open  ssl/http             Microsoft IIS httpd 10.0
+| ssl-cert: Subject: commonName=mx1
+| Subject Alternative Name: DNS:mx1, DNS:mx1.company.local
+| Not valid before: 2022-02-24T16:22:57
+|_Not valid after:  2027-02-24T16:22:57
+|_http-title: Runtime Error
+|_http-server-header: Microsoft-IIS/10.0
+445/tcp   open  microsoft-ds?
+465/tcp   open  smtp                 Microsoft Exchange smtpd
+| smtp-commands: mx1.company.local Hello [10.20.5.12], SIZE 37748736, PIPELINING, DSN, ENHANCEDSTATUSCODES, STARTTLS, X-ANONYMOUSTLS, AUTH GSSAPI NTLM, X-EXPS GSSAPI NTLM, 8BITMIME, BINARYMIME, CHUNKING, XEXCH50, SMTPUTF8, XRDST, XSHADOWREQUEST
+|_ This server supports the following commands: HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH BDAT
+| smtp-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: MX1
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: mx1.company.local
+|   DNS_Tree_Name: company.local
+|_  Product_Version: 10.0.17763
+| ssl-cert: Subject: commonName=mx1
+| Subject Alternative Name: DNS:mx1, DNS:mx1.company.local
+| Not valid before: 2022-02-24T16:22:57
+|_Not valid after:  2027-02-24T16:22:57
+475/tcp   open  smtp
+| smtp-commands: mx1.company.local Hello [10.20.5.12], SIZE 37748736, PIPELINING, DSN, ENHANCEDSTATUSCODES, X-ANONYMOUSTLS, X-EXPS GSSAPI NTLM, 8BITMIME, BINARYMIME, CHUNKING, SMTPUTF8
+|_ This server supports the following commands: HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH BDAT
+| fingerprint-strings: 
+|   GenericLines: 
+|     220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:08 +0300
+|     5.3.3 Unrecognized command 'unknown'
+|     5.3.3 Unrecognized command 'unknown'
+|   GetRequest: 
+|     220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:19 +0300
+|     5.3.3 Unrecognized command 'GET'
+|     5.3.3 Unrecognized command 'unknown'
+|   Hello: 
+|     220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:24 +0300
+|     250-mx1.company.local Hello [10.20.5.12]
+|     250-SIZE 37748736
+|     250-PIPELINING
+|     250-DSN
+|     250-ENHANCEDSTATUSCODES
+|     250-X-ANONYMOUSTLS
+|     250-X-EXPS GSSAPI NTLM
+|     250-8BITMIME
+|     250-BINARYMIME
+|     250-CHUNKING
+|     SMTPUTF8
+|   Help: 
+|     220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:31 +0300
+|     214-This server supports the following commands:
+|     HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH BDAT
+|   NULL: 
+|_    220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:08 +0300
+476/tcp   open  smtp
+| fingerprint-strings: 
+|   GenericLines: 
+|     220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:08 +0300
+|     5.3.3 Unrecognized command 'unknown'
+|     5.3.3 Unrecognized command 'unknown'
+|   GetRequest: 
+|     220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:19 +0300
+|     5.3.3 Unrecognized command 'GET'
+|     5.3.3 Unrecognized command 'unknown'
+|   Hello: 
+|     220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:24 +0300
+|     250-mx1.company.local Hello [10.20.5.12]
+|     250-SIZE 37748736
+|     250-PIPELINING
+|     250-DSN
+|     250-ENHANCEDSTATUSCODES
+|     250-X-ANONYMOUSTLS
+|     250-X-EXPS GSSAPI NTLM
+|     250-8BITMIME
+|     250-BINARYMIME
+|     250-CHUNKING
+|     SMTPUTF8
+|   Help: 
+|     220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:31 +0300
+|     214-This server supports the following commands:
+|     HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH BDAT
+|   NULL: 
+|_    220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:08 +0300
+| smtp-commands: mx1.company.local Hello [10.20.5.12], SIZE 37748736, PIPELINING, DSN, ENHANCEDSTATUSCODES, X-ANONYMOUSTLS, X-EXPS GSSAPI NTLM, 8BITMIME, BINARYMIME, CHUNKING, SMTPUTF8
+|_ This server supports the following commands: HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH BDAT
+477/tcp   open  smtp
+| fingerprint-strings: 
+|   GenericLines: 
+|     220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:08 +0300
+|     5.3.3 Unrecognized command 'unknown'
+|     5.3.3 Unrecognized command 'unknown'
+|   GetRequest: 
+|     220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:19 +0300
+|     5.3.3 Unrecognized command 'GET'
+|     5.3.3 Unrecognized command 'unknown'
+|   Hello: 
+|     220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:24 +0300
+|     250-mx1.company.local Hello [10.20.5.12]
+|     250-SIZE 37748736
+|     250-PIPELINING
+|     250-DSN
+|     250-ENHANCEDSTATUSCODES
+|     250-X-ANONYMOUSTLS
+|     250-X-EXPS GSSAPI NTLM
+|     250-8BITMIME
+|     250-BINARYMIME
+|     250-CHUNKING
+|     SMTPUTF8
+|   Help: 
+|     220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:31 +0300
+|     214-This server supports the following commands:
+|     HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH BDAT
+|   NULL: 
+|_    220 mx1.company.local MICROSOFT ESMTP MAIL SERVICE READY AT Thu, 10 Mar 2022 11:43:08 +0300
+| smtp-commands: mx1.company.local Hello [10.20.5.12], SIZE 37748736, PIPELINING, DSN, ENHANCEDSTATUSCODES, X-ANONYMOUSTLS, X-EXPS GSSAPI NTLM, 8BITMIME, BINARYMIME, CHUNKING, SMTPUTF8
+|_ This server supports the following commands: HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH BDAT
+587/tcp   open  smtp                 Microsoft Exchange smtpd
+| smtp-commands: mx1.company.local Hello [10.20.5.12], SIZE 37748736, PIPELINING, DSN, ENHANCEDSTATUSCODES, STARTTLS, AUTH GSSAPI NTLM, 8BITMIME, BINARYMIME, CHUNKING, SMTPUTF8
+|_ This server supports the following commands: HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH BDAT
+| smtp-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: MX1
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: mx1.company.local
+|   DNS_Tree_Name: company.local
+|_  Product_Version: 10.0.17763
+| ssl-cert: Subject: commonName=mx1
+| Subject Alternative Name: DNS:mx1, DNS:mx1.company.local
+| Not valid before: 2022-02-24T16:22:57
+|_Not valid after:  2027-02-24T16:22:57
+593/tcp   open  ncacn_http           Microsoft Windows RPC over HTTP 1.0
+717/tcp   open  smtp                 Microsoft Exchange smtpd
+| smtp-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: MX1
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: mx1.company.local
+|   DNS_Tree_Name: company.local
+|_  Product_Version: 10.0.17763
+| smtp-commands: mx1.company.local Hello [10.20.5.12], SIZE 37748736, PIPELINING, DSN, ENHANCEDSTATUSCODES, STARTTLS, X-ANONYMOUSTLS, AUTH NTLM, X-EXPS GSSAPI NTLM, 8BITMIME, BINARYMIME, CHUNKING, SMTPUTF8, XRDST
+|_ This server supports the following commands: HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH BDAT
+| ssl-cert: Subject: commonName=mx1
+| Subject Alternative Name: DNS:mx1, DNS:mx1.company.local
+| Not valid before: 2022-02-24T16:22:57
+|_Not valid after:  2027-02-24T16:22:57
+808/tcp   open  ccproxy-http?
+890/tcp   open  mc-nmf               .NET Message Framing
+993/tcp   open  ssl/imap             Microsoft Exchange 2007-2010 imapd
+| imap-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: MX1
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: mx1.company.local
+|   DNS_Tree_Name: company.local
+|_  Product_Version: 10.0.17763
+|_imap-capabilities: ID AUTH=NTLM CHILDREN UIDPLUS LITERAL+A0001 IDLE AUTH=PLAIN CAPABILITY UNSELECT OK completed IMAP4rev1 AUTH=GSSAPI MOVE NAMESPACE SASL-IR IMAP4
+| ssl-cert: Subject: commonName=mx1
+| Subject Alternative Name: DNS:mx1, DNS:mx1.company.local
+| Not valid before: 2022-02-24T16:22:57
+|_Not valid after:  2027-02-24T16:22:57
+995/tcp   open  ssl/pop3             Microsoft Exchange 2007-2010 pop3d
+|_pop3-capabilities: USER TOP SASL(PLAIN) UIDL
+| ssl-cert: Subject: commonName=mx1
+| Subject Alternative Name: DNS:mx1, DNS:mx1.company.local
+| Not valid before: 2022-02-24T16:22:57
+|_Not valid after:  2027-02-24T16:22:57
+1801/tcp  open  msmq?
+1993/tcp  open  ssl/imap             Microsoft Exchange 2007-2010 imapd
+| ssl-cert: Subject: commonName=mx1
+| Subject Alternative Name: DNS:mx1, DNS:mx1.company.local
+| Not valid before: 2022-02-24T16:22:57
+|_Not valid after:  2027-02-24T16:22:57
+|_imap-capabilities: XPROXY3 ID AUTH=NTLM CHILDREN UIDPLUS LITERAL+A0001 IDLE IMAP4rev1 CAPABILITY UNSELECT OK completed AUTH=GSSAPI MOVE NAMESPACE CLIENTNETWORKPRESENCELOCATION IMAP4 SASL-IR AUTH=PLAIN
+| imap-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: MX1
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: mx1.company.local
+|   DNS_Tree_Name: company.local
+|_  Product_Version: 10.0.17763
+1995/tcp  open  ssl/pop3             Microsoft Exchange 2007-2010 pop3d
+|_pop3-capabilities: USER SASL(PLAIN) CLIENTNETWORKPRESENCELOCATION TOP UIDL
+| ssl-cert: Subject: commonName=mx1
+| Subject Alternative Name: DNS:mx1, DNS:mx1.company.local
+| Not valid before: 2022-02-24T16:22:57
+|_Not valid after:  2027-02-24T16:22:57
+2103/tcp  open  msrpc                Microsoft Windows RPC
+2105/tcp  open  msrpc                Microsoft Windows RPC
+2107/tcp  open  msrpc                Microsoft Windows RPC
+2525/tcp  open  smtp                 Microsoft Exchange smtpd
+| smtp-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: MX1
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: mx1.company.local
+|   DNS_Tree_Name: company.local
+|_  Product_Version: 10.0.17763
+| smtp-commands: mx1.company.local Hello [10.20.5.12], SIZE, PIPELINING, DSN, ENHANCEDSTATUSCODES, STARTTLS, X-ANONYMOUSTLS, AUTH NTLM, X-EXPS GSSAPI NTLM, 8BITMIME, BINARYMIME, CHUNKING, XEXCH50, SMTPUTF8, XRDST, XSHADOWREQUEST
+|_ This server supports the following commands: HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH BDAT
+| ssl-cert: Subject: commonName=mx1
+| Subject Alternative Name: DNS:mx1, DNS:mx1.company.local
+| Not valid before: 2022-02-24T16:22:57
+|_Not valid after:  2027-02-24T16:22:57
+3389/tcp  open  ms-wbt-server        Microsoft Terminal Services
+| ssl-cert: Subject: commonName=mx1.company.local
+| Not valid before: 2022-02-23T15:56:11
+|_Not valid after:  2022-08-25T15:56:11
+| rdp-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: MX1
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: mx1.company.local
+|   DNS_Tree_Name: company.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2022-03-10T08:47:34+00:00
+3800/tcp  open  http                 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+3801/tcp  open  mc-nmf               .NET Message Framing
+3803/tcp  open  mc-nmf               .NET Message Framing
+3823/tcp  open  mc-nmf               .NET Message Framing
+3828/tcp  open  mc-nmf               .NET Message Framing
+3843/tcp  open  mc-nmf               .NET Message Framing
+3863/tcp  open  mc-nmf               .NET Message Framing
+3867/tcp  open  mc-nmf               .NET Message Framing
+3875/tcp  open  msexchange-logcopier Microsoft Exchange 2010 log copier
+5985/tcp  open  http                 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+5986/tcp  open  ssl/http             Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+| ssl-cert: Subject: commonName=Cloudbase-Init WinRM
+| Not valid before: 2022-02-23T14:40:24
+|_Not valid after:  2032-02-22T14:40:24
+6001/tcp  open  ncacn_http           Microsoft Windows RPC over HTTP 1.0
+6400/tcp  open  msrpc                Microsoft Windows RPC
+6401/tcp  open  msrpc                Microsoft Windows RPC
+6402/tcp  open  msrpc                Microsoft Windows RPC
+6403/tcp  open  msrpc                Microsoft Windows RPC
+6404/tcp  open  msrpc                Microsoft Windows RPC
+6405/tcp  open  msrpc                Microsoft Windows RPC
+6406/tcp  open  msrpc                Microsoft Windows RPC
+6409/tcp  open  msrpc                Microsoft Windows RPC
+6411/tcp  open  msrpc                Microsoft Windows RPC
+6432/tcp  open  msrpc                Microsoft Windows RPC
+6455/tcp  open  msrpc                Microsoft Windows RPC
+6538/tcp  open  msrpc                Microsoft Windows RPC
+6546/tcp  open  msrpc                Microsoft Windows RPC
+6548/tcp  open  msrpc                Microsoft Windows RPC
+6549/tcp  open  msrpc                Microsoft Windows RPC
+6559/tcp  open  msrpc                Microsoft Windows RPC
+6567/tcp  open  msrpc                Microsoft Windows RPC
+6569/tcp  open  msrpc                Microsoft Windows RPC
+6570/tcp  open  msrpc                Microsoft Windows RPC
+6574/tcp  open  msrpc                Microsoft Windows RPC
+6576/tcp  open  msrpc                Microsoft Windows RPC
+6579/tcp  open  msrpc                Microsoft Windows RPC
+6581/tcp  open  msrpc                Microsoft Windows RPC
+6587/tcp  open  msrpc                Microsoft Windows RPC
+6593/tcp  open  msrpc                Microsoft Windows RPC
+6608/tcp  open  msrpc                Microsoft Windows RPC
+6610/tcp  open  msrpc                Microsoft Windows RPC
+6630/tcp  open  msrpc                Microsoft Windows RPC
+6632/tcp  open  msrpc                Microsoft Windows RPC
+6654/tcp  open  msrpc                Microsoft Windows RPC
+6657/tcp  open  msrpc                Microsoft Windows RPC
+6666/tcp  open  msrpc                Microsoft Windows RPC
+|_irc-info: Unable to open connection
+6667/tcp  open  msrpc                Microsoft Windows RPC
+|_irc-info: Unable to open connection
+6693/tcp  open  msrpc                Microsoft Windows RPC
+6710/tcp  open  msrpc                Microsoft Windows RPC
+6751/tcp  open  msrpc                Microsoft Windows RPC
+6752/tcp  open  msrpc                Microsoft Windows RPC
+6754/tcp  open  msrpc                Microsoft Windows RPC
+6802/tcp  open  msrpc                Microsoft Windows RPC
+6849/tcp  open  msrpc                Microsoft Windows RPC
+6851/tcp  open  msrpc                Microsoft Windows RPC
+6869/tcp  open  msrpc                Microsoft Windows RPC
+6880/tcp  open  msrpc                Microsoft Windows RPC
+6902/tcp  open  msrpc                Microsoft Windows RPC
+6910/tcp  open  msrpc                Microsoft Windows RPC
+6921/tcp  open  msrpc                Microsoft Windows RPC
+7037/tcp  open  msrpc                Microsoft Windows RPC
+7087/tcp  open  msrpc                Microsoft Windows RPC
+7116/tcp  open  msrpc                Microsoft Windows RPC
+7227/tcp  open  msrpc                Microsoft Windows RPC
+8172/tcp  open  ssl/http             Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: Site doesn't have a title.
+| ssl-cert: Subject: commonName=WMSvc-SHA2-MX1
+| Not valid before: 2022-02-24T16:07:49
+|_Not valid after:  2032-02-22T16:07:49
+8199/tcp  open  msrpc                Microsoft Windows RPC
+8210/tcp  open  msrpc                Microsoft Windows RPC
+9710/tcp  open  mc-nmf               .NET Message Framing
+47001/tcp open  http                 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+64327/tcp open  msexchange-logcopier Microsoft Exchange 2010 log copier
+64337/tcp open  mc-nmf               .NET Message Framing
+3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port475-TCP:V=7.92%I=7%D=3/10%Time=6229BA22%P=x86_64-pc-linux-gnu%r(NUL
+SF:L,5D,"220\x20mx1\.company\.local\x20MICROSOFT\x20ESMTP\x20MAIL\x20SERVI
+SF:CE\x20READY\x20AT\x20Thu,\x2010\x20Mar\x202022\x2011:43:08\x20\+0300\r\
+SF:n")%r(GenericLines,B1,"220\x20mx1\.company\.local\x20MICROSOFT\x20ESMTP
+SF:\x20MAIL\x20SERVICE\x20READY\x20AT\x20Thu,\x2010\x20Mar\x202022\x2011:4
+SF:3:08\x20\+0300\r\n500\x205\.3\.3\x20Unrecognized\x20command\x20'unknown
+SF:'\r\n500\x205\.3\.3\x20Unrecognized\x20command\x20'unknown'\r\n")%r(Get
+SF:Request,AD,"220\x20mx1\.company\.local\x20MICROSOFT\x20ESMTP\x20MAIL\x2
+SF:0SERVICE\x20READY\x20AT\x20Thu,\x2010\x20Mar\x202022\x2011:43:19\x20\+0
+SF:300\r\n500\x205\.3\.3\x20Unrecognized\x20command\x20'GET'\r\n500\x205\.
+SF:3\.3\x20Unrecognized\x20command\x20'unknown'\r\n")%r(Hello,132,"220\x20
+SF:mx1\.company\.local\x20MICROSOFT\x20ESMTP\x20MAIL\x20SERVICE\x20READY\x
+SF:20AT\x20Thu,\x2010\x20Mar\x202022\x2011:43:24\x20\+0300\r\n250-mx1\.com
+SF:pany\.local\x20Hello\x20\[10\.20\.5\.12\]\r\n250-SIZE\x2037748736\r\n25
+SF:0-PIPELINING\r\n250-DSN\r\n250-ENHANCEDSTATUSCODES\r\n250-X-ANONYMOUSTL
+SF:S\r\n250-X-EXPS\x20GSSAPI\x20NTLM\r\n250-8BITMIME\r\n250-BINARYMIME\r\n
+SF:250-CHUNKING\r\n250\x20SMTPUTF8\r\n")%r(Help,CF,"220\x20mx1\.company\.l
+SF:ocal\x20MICROSOFT\x20ESMTP\x20MAIL\x20SERVICE\x20READY\x20AT\x20Thu,\x2
+SF:010\x20Mar\x202022\x2011:43:31\x20\+0300\r\n214-This\x20server\x20suppo
+SF:rts\x20the\x20following\x20commands:\r\n214\x20HELO\x20EHLO\x20STARTTLS
+SF:\x20RCPT\x20DATA\x20RSET\x20MAIL\x20QUIT\x20HELP\x20AUTH\x20BDAT\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port476-TCP:V=7.92%I=7%D=3/10%Time=6229BA22%P=x86_64-pc-linux-gnu%r(NUL
+SF:L,5D,"220\x20mx1\.company\.local\x20MICROSOFT\x20ESMTP\x20MAIL\x20SERVI
+SF:CE\x20READY\x20AT\x20Thu,\x2010\x20Mar\x202022\x2011:43:08\x20\+0300\r\
+SF:n")%r(GenericLines,B1,"220\x20mx1\.company\.local\x20MICROSOFT\x20ESMTP
+SF:\x20MAIL\x20SERVICE\x20READY\x20AT\x20Thu,\x2010\x20Mar\x202022\x2011:4
+SF:3:08\x20\+0300\r\n500\x205\.3\.3\x20Unrecognized\x20command\x20'unknown
+SF:'\r\n500\x205\.3\.3\x20Unrecognized\x20command\x20'unknown'\r\n")%r(Get
+SF:Request,AD,"220\x20mx1\.company\.local\x20MICROSOFT\x20ESMTP\x20MAIL\x2
+SF:0SERVICE\x20READY\x20AT\x20Thu,\x2010\x20Mar\x202022\x2011:43:19\x20\+0
+SF:300\r\n500\x205\.3\.3\x20Unrecognized\x20command\x20'GET'\r\n500\x205\.
+SF:3\.3\x20Unrecognized\x20command\x20'unknown'\r\n")%r(Hello,132,"220\x20
+SF:mx1\.company\.local\x20MICROSOFT\x20ESMTP\x20MAIL\x20SERVICE\x20READY\x
+SF:20AT\x20Thu,\x2010\x20Mar\x202022\x2011:43:24\x20\+0300\r\n250-mx1\.com
+SF:pany\.local\x20Hello\x20\[10\.20\.5\.12\]\r\n250-SIZE\x2037748736\r\n25
+SF:0-PIPELINING\r\n250-DSN\r\n250-ENHANCEDSTATUSCODES\r\n250-X-ANONYMOUSTL
+SF:S\r\n250-X-EXPS\x20GSSAPI\x20NTLM\r\n250-8BITMIME\r\n250-BINARYMIME\r\n
+SF:250-CHUNKING\r\n250\x20SMTPUTF8\r\n")%r(Help,CF,"220\x20mx1\.company\.l
+SF:ocal\x20MICROSOFT\x20ESMTP\x20MAIL\x20SERVICE\x20READY\x20AT\x20Thu,\x2
+SF:010\x20Mar\x202022\x2011:43:31\x20\+0300\r\n214-This\x20server\x20suppo
+SF:rts\x20the\x20following\x20commands:\r\n214\x20HELO\x20EHLO\x20STARTTLS
+SF:\x20RCPT\x20DATA\x20RSET\x20MAIL\x20QUIT\x20HELP\x20AUTH\x20BDAT\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port477-TCP:V=7.92%I=7%D=3/10%Time=6229BA22%P=x86_64-pc-linux-gnu%r(NUL
+SF:L,5D,"220\x20mx1\.company\.local\x20MICROSOFT\x20ESMTP\x20MAIL\x20SERVI
+SF:CE\x20READY\x20AT\x20Thu,\x2010\x20Mar\x202022\x2011:43:08\x20\+0300\r\
+SF:n")%r(GenericLines,B1,"220\x20mx1\.company\.local\x20MICROSOFT\x20ESMTP
+SF:\x20MAIL\x20SERVICE\x20READY\x20AT\x20Thu,\x2010\x20Mar\x202022\x2011:4
+SF:3:08\x20\+0300\r\n500\x205\.3\.3\x20Unrecognized\x20command\x20'unknown
+SF:'\r\n500\x205\.3\.3\x20Unrecognized\x20command\x20'unknown'\r\n")%r(Get
+SF:Request,AD,"220\x20mx1\.company\.local\x20MICROSOFT\x20ESMTP\x20MAIL\x2
+SF:0SERVICE\x20READY\x20AT\x20Thu,\x2010\x20Mar\x202022\x2011:43:19\x20\+0
+SF:300\r\n500\x205\.3\.3\x20Unrecognized\x20command\x20'GET'\r\n500\x205\.
+SF:3\.3\x20Unrecognized\x20command\x20'unknown'\r\n")%r(Hello,132,"220\x20
+SF:mx1\.company\.local\x20MICROSOFT\x20ESMTP\x20MAIL\x20SERVICE\x20READY\x
+SF:20AT\x20Thu,\x2010\x20Mar\x202022\x2011:43:24\x20\+0300\r\n250-mx1\.com
+SF:pany\.local\x20Hello\x20\[10\.20\.5\.12\]\r\n250-SIZE\x2037748736\r\n25
+SF:0-PIPELINING\r\n250-DSN\r\n250-ENHANCEDSTATUSCODES\r\n250-X-ANONYMOUSTL
+SF:S\r\n250-X-EXPS\x20GSSAPI\x20NTLM\r\n250-8BITMIME\r\n250-BINARYMIME\r\n
+SF:250-CHUNKING\r\n250\x20SMTPUTF8\r\n")%r(Help,CF,"220\x20mx1\.company\.l
+SF:ocal\x20MICROSOFT\x20ESMTP\x20MAIL\x20SERVICE\x20READY\x20AT\x20Thu,\x2
+SF:010\x20Mar\x202022\x2011:43:31\x20\+0300\r\n214-This\x20server\x20suppo
+SF:rts\x20the\x20following\x20commands:\r\n214\x20HELO\x20EHLO\x20STARTTLS
+SF:\x20RCPT\x20DATA\x20RSET\x20MAIL\x20QUIT\x20HELP\x20AUTH\x20BDAT\r\n");
+Service Info: Host: mx1.company.local; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2022-03-10T08:47:41
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+
+Nmap scan report for 10.20.3.50
+Host is up (0.011s latency).
+Not shown: 65506 closed tcp ports (conn-refused)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2022-03-10 08:46:12Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: company.local0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: company.local0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: company
+|   NetBIOS_Domain_Name: company
+|   NetBIOS_Computer_Name: NS1
+|   DNS_Domain_Name: company.local
+|   DNS_Computer_Name: ns1.company.local
+|   DNS_Tree_Name: company.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2022-03-10T08:47:31+00:00
+|_ssl-date: 2022-03-10T08:47:56+00:00; 0s from scanner time.
+| ssl-cert: Subject: commonName=ns1.company.local
+| Not valid before: 2022-02-23T15:37:08
+|_Not valid after:  2022-08-25T15:37:08
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+5986/tcp  open  ssl/http      Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_ssl-date: 2022-03-10T08:47:56+00:00; 0s from scanner time.
+| tls-alpn: 
+|_  http/1.1
+| ssl-cert: Subject: commonName=Cloudbase-Init WinRM
+| Not valid before: 2022-02-23T15:28:20
+|_Not valid after:  2032-02-22T15:28:20
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49670/tcp open  msrpc         Microsoft Windows RPC
+49671/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49672/tcp open  msrpc         Microsoft Windows RPC
+49674/tcp open  msrpc         Microsoft Windows RPC
+49684/tcp open  msrpc         Microsoft Windows RPC
+49723/tcp open  msrpc         Microsoft Windows RPC
+57847/tcp open  msrpc         Microsoft Windows RPC
+63180/tcp open  msrpc         Microsoft Windows RPC
+Service Info: Host: NS1; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2022-03-10T08:47:47
+|_  start_date: N/A
+
+Post-scan script results:
+| clock-skew: 
+|   0s: 
+|     10.20.3.10
+|     10.20.3.20
+|_    10.20.3.50
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Mar 10 11:47:57 2022 -- 256 IP addresses (7 hosts up) scanned in 358.35 seconds
